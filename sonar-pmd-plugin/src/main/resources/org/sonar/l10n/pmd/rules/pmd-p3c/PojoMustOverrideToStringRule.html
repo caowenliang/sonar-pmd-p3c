@@ -1,0 +1,18 @@
+The toString method must be implemented in a POJO class. The super.toString method should be called in front of the whole implementation if the current class extends another POJO class.
+<p>Examples:</p>
+<pre>
+    public class ToStringDemo extends Super{
+        private String secondName;
+        @Override
+        public String toString() {
+            return super.toString() + "ToStringDemo{" + "secondName='" + secondName + '\'' + '}';
+        }
+    }
+    class Super {
+        private String firstName;
+        @Override
+        public String toString() {
+            return "Super{" + "firstName=" + firstName + '\'' + '}';
+        }
+    }
+</pre>

@@ -1,0 +1,17 @@
+Never use return within a finally block. A return statement in a finally block will cause exceptions or result in a discarded return value in the try-catch block. Examples:
+<pre>
+    Negative example:
+    public static Long readFileLength(String fileName) {
+        try {
+            File file = new File(fileName);
+            RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
+            return randomAccessFile.length();
+        } catch (Exception e) {
+            logger.error(e.getMessage(), e);
+        } finally {
+            countDownLatch.countDown();
+            return 0L;
+        }
+    }
+</pre>
+

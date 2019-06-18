@@ -1,0 +1,18 @@
+A meaningful thread name is helpful to trace the error information,so assign a name when creating threads or thread pools.
+<p>Examples:</p>
+<pre>
+    Positive example 1：
+    ThreadFactory namedThreadFactory = new ThreadFactoryBuilder()
+        .setNameFormat("demo-pool-%d").build();
+    ExecutorService singleThreadPool = new ThreadPoolExecutor(1, 1,
+        0L, TimeUnit.MILLISECONDS,
+        new LinkedBlockingQueue<Runnable>(1024), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
+    singleThreadPool.execute(()-> System.out.println(Thread.currentThread().getName()));
+    singleThreadPool.shutdown();
+
+    Positive example 2：
+    public class TimerTaskThread extends Thread {
+        public TimerTaskThread(){
+        super.setName("TimerTaskThread"); …
+    }
+</pre>

@@ -1,0 +1,19 @@
+When using CountDownLatch to convert asynchronous operations to synchronous ones,each thread must call countdown method before quitting. Make sure to catch any exception during thread running, to let countdown method be executed. If main thread cannot reach await method, program will return until timeout.
+<p>Examples:</p>
+<pre>
+    /**
+     * @author caikang
+     * @date 2017/04/07
+     */
+    public class CountDownExample {
+        public void operate(CountDownLatch countDownLatch){
+            try{
+                System.out.println("business logic");
+            }catch (RuntimeException e){
+                // do something
+            }finally {
+                countDownLatch.countDown();
+            }
+        }
+    }
+</pre>

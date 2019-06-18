@@ -1,0 +1,12 @@
+Do not cast subList in class ArrayList, otherwise ClassCastException will be thrown.
+<p>Examples:</p>
+<pre>
+    Negative example:
+    List<String> list = new ArrayList<String>();
+    list.add("22");
+    //warn
+    List<String> test = (ArrayList<String>) list.subList(0, 1);
+
+    Positive example:
+    List<String> list2 = new ArrayList<String>(list.subList(0, 1));
+</pre>

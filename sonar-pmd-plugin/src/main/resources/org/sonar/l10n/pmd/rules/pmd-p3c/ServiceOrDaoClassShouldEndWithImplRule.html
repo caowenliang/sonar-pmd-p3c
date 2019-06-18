@@ -1,0 +1,13 @@
+All Service and DAO classes must be interface based on SOA principle. Implementation class names should be ended with Impl.
+<p>Examples:</p>
+<pre>
+    public interface DemoService{
+        void f();
+    }
+    public class DemoServiceImpl implements DemoService {
+        @Override
+        public void f(){
+            System.out.println("hello world");
+        }
+    }
+</pre>

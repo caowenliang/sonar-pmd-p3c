@@ -1,0 +1,10 @@
+Since NullPointerException can possibly be thrown while calling the equals method of Object, equals should be invoked by a constant or an object that is definitely not null.
+<p>Examples:</p>
+<pre>
+    public void f(String str){
+        String inner = "hi";
+        if (inner.equals(str)) {
+            System.out.println("hello world");
+        }
+    }
+</pre>

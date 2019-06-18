@@ -1,0 +1,28 @@
+Avoid using Random instance by multiple threads. Although it is safe to share this instance, competition on the same seed will damage performance. Note: Random instance includes instances of java.util.Random and Math.random().
+Examples:
+<pre>
+    Positive example 1：
+    /**
+     * @author caikang
+     * @date 2017/04/07
+     */
+    public class RandomInThread extends Thread {
+        private Random random = new Random();
+        @Override
+        public void run() {
+            long t = random.nextLong();
+        }
+    }
+    Positive example 2：
+    /**
+     * @author caikang
+     * @date 2017/04/07
+     */
+    public class RandomInThread extends Thread {
+        private Random random = ThreadLocalRandom.current();
+        @Override
+        public void run() {
+            long t = random.nextLong();
+        }
+    }
+</pre>

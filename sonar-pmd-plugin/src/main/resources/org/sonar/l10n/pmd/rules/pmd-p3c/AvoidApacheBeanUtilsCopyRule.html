@@ -1,0 +1,7 @@
+Avoid using *Apache Beanutils* to copy attributes. Examples:
+<pre>
+    TestObject a = new TestObject();
+    TestObject b = new TestObject();
+    a.setX(b.getX());
+    a.setY(b.getY());
+</pre>

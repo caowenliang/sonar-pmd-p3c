@@ -1,0 +1,14 @@
+Do not use complicated statements in conditional statements (except for frequently used methods like getXxx/isXxx). Use boolean variables to store results of complicated statements temporarily will increase the code's readability.
+<p>Examples:</p>
+<pre>
+    Negative example:
+    if ((file.open(fileName, "w") != null) && (...) || (...)) {
+        // ...
+    }
+
+    Positive example:
+    boolean existed = (file.open(fileName, "w") != null) && (...) || (...);
+    if (existed) {
+        //...
+    }
+</pre>

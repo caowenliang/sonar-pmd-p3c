@@ -1,0 +1,12 @@
+When using regex, precompile needs to be done in order to increase the matching performance. Examples:
+<pre>
+    public class XxxClass {
+        // Use precompile
+        private static Pattern NUMBER_PATTERN = Pattern.compile("[0-9]+");
+        public Pattern getNumberPattern() {
+            // Avoid use Pattern.compile in method body.
+            Pattern localPattern = Pattern.compile("[0-9]+");
+            return localPattern;
+        }
+    }
+</pre>

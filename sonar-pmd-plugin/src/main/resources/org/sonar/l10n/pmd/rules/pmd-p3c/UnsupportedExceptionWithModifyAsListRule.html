@@ -1,0 +1,13 @@
+Do not use methods which will modify the list after using Arrays.asList to convert array to list, otherwise methods like add/remove/clear will throw UnsupportedOperationException. 
+<p>Examples:</p>
+<pre>
+    Positive example:
+    List<String> t   = Arrays.asList("a","b","c");
+    //warn
+    t.add("22");
+    //warn
+    t.remove("22");
+    //warn
+    t.clear();
+
+</pre>

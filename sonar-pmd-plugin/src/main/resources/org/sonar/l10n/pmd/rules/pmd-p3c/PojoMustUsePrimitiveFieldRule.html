@@ -1,0 +1,13 @@
+<p>
+Rules for using primitive data types and wrapper classes:
+ 1) Members of a POJO class must be wrapper classes.
+ 2) The return value and arguments of a RPC method must be wrapper classes.
+ 3) [Recommended] Local variables should be primitive data types.
+<p>
+<p>Examples:</p>
+<pre>
+    public class DemoDO {
+        String str;
+        Integer a;
+    }
+</pre>

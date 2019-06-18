@@ -1,0 +1,10 @@
+When doing date formatting, "yyyy" represents the day in which year, while "YYYY" represents the week in which
+ * year (a concept introduced in JDK7). If a week is across two years, the returning "YYYY"represents the next year.
+<p>Examples:</p>
+<pre>
+Negative example:
+    SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    
+Positive example:
+        SimpleDateFormat format = new SimpleDateFormat("YYYY-mm-dd HH:mm:ss");
+</pre>

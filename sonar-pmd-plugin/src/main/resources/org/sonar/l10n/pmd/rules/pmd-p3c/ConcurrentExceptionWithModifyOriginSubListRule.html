@@ -1,0 +1,10 @@
+When using subList, be careful to modify the size of original list. It might cause ConcurrentModificationException when performing traversing, adding or deleting on the subList.
+<p>Examples:</p>
+<pre>
+    Negative example:
+    List<String> originList = new ArrayList<String>();
+    originList.add("22");
+    List<String> subList = originList.subList(0, 1);
+    //warn
+    originList.add("22");
+</pre>
