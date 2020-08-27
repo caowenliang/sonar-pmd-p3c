@@ -1,0 +1,10 @@
+<p>说明：BigDecimal(double)存在精度损失风险，在精确计算或值比较的场景中可能会导致业务逻辑异常。</p>
+  Negative example:
+<pre>
+  BigDecimal good1 = new BigDecimal(0.1);
+</pre>
+  Positive example:
+<pre>
+  BigDecimal good1 = new BigDecimal("0.1");
+  BigDecimal good2 = BigDecimal.valueOf(0.1);
+</pre>

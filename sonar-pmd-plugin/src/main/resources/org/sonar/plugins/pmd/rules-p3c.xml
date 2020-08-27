@@ -60,6 +60,10 @@
         <priority>MAJOR</priority>
         <configKey><![CDATA[rulesets/java/ali-concurrent.xml/CountDownShouldInFinallyRule]]></configKey>
     </rule>
+    <rule key="LockShouldWithTryFinallyRule">
+      <priority>MAJOR</priority>
+      <configKey><![CDATA[rulesets/java/ali-concurrent.xml/LockShouldWithTryFinallyRule]]></configKey>
+    </rule>
 
     <!--AlibabaJavaConstants-->
     <rule key="UpperEllRule">
@@ -174,7 +178,12 @@
         <priority>MAJOR</priority>
         <configKey><![CDATA[rulesets/java/ali-oop.xml/PojoMustOverrideToStringRule]]></configKey>
     </rule>
-    
+    <rule key="BigDecimalAvoidDoubleConstructorRule">
+      <priority>MAJOR</priority>
+      <configKey><![CDATA[rulesets/java/ali-oop.xml/BigDecimalAvoidDoubleConstructorRule]]></configKey>
+    </rule>
+
+
     <!--AlibabaJavaORM-->
     <rule key="IbatisMethodQueryForListRule">
         <priority>MAJOR</priority>
@@ -205,6 +214,10 @@
     <rule key="UseRightCaseForDateFormatRule">
         <priority>CRITICAL</priority>
         <configKey><![CDATA[rulesets/java/ali-other.xml/UseRightCaseForDateFormatRule]]></configKey>
+    </rule>
+    <rule key="AvoidDoubleOrFloatEqualCompareRule">
+        <priority>CRITICAL</priority>
+        <configKey><![CDATA[rulesets/java/ali-other.xml/AvoidDoubleOrFloatEqualCompareRule]]></configKey>
     </rule>
 
     <!--AlibabaJavaSets-->
